@@ -1,0 +1,1787 @@
+\version, Keyword
+ , Space
+", StringQuotedStart
+2.11.46, String
+", StringQuotedEnd
+
+
+, Space
+voiceone, Name
+ , Space
+=, EqualSign
+
+, Space
+\relative, PitchCommand
+ , Space
+c, Note
+', Octave
+ , Space
+{, SequentialStart
+
+   , Space
+r, Rest
+16, Length
+  , Space
+c, Note
+[, BeamStart
+ , Space
+d, Note
+ , Space
+e, Note
+], BeamEnd
+   , Space
+f, Note
+[, BeamStart
+ , Space
+d, Note
+ , Space
+e, Note
+ , Space
+c, Note
+], BeamEnd
+  , Space
+g, Note
+', Octave
+8, Length
+[, BeamStart
+ , Space
+c, Note
+ , Space
+b, Note
+^, Direction
+\prall, ArticulationCommand
+ , Space
+c, Note
+], BeamEnd
+              , Space
+|, PipeSymbol
+ , Space
+% 1, LineComment
+
+   , Space
+d, Note
+16, Length
+[, BeamStart
+ , Space
+g, Note
+,, Octave
+ , Space
+a, Note
+ , Space
+b, Note
+], BeamEnd
+  , Space
+c, Note
+[, BeamStart
+ , Space
+a, Note
+ , Space
+b, Note
+ , Space
+g, Note
+], BeamEnd
+  , Space
+d, Note
+', Octave
+8, Length
+[, BeamStart
+ , Space
+g, Note
+ , Space
+f, Note
+^, Direction
+\prall, ArticulationCommand
+ , Space
+g, Note
+], BeamEnd
+               , Space
+|, PipeSymbol
+ , Space
+% 2, LineComment
+
+   , Space
+e, Note
+16, Length
+[, BeamStart
+ , Space
+a, Note
+ , Space
+g, Note
+ , Space
+f, Note
+], BeamEnd
+  , Space
+e, Note
+[, BeamStart
+ , Space
+g, Note
+ , Space
+f, Note
+ , Space
+a, Note
+], BeamEnd
+  , Space
+g, Note
+[, BeamStart
+ , Space
+f, Note
+ , Space
+e, Note
+ , Space
+d, Note
+], BeamEnd
+  , Space
+c, Note
+[, BeamStart
+ , Space
+e, Note
+ , Space
+d, Note
+ , Space
+f, Note
+], BeamEnd
+              , Space
+|, PipeSymbol
+ , Space
+% 3, LineComment
+
+   , Space
+e, Note
+[, BeamStart
+ , Space
+d, Note
+ , Space
+c, Note
+ , Space
+b, Note
+], BeamEnd
+  , Space
+a, Note
+[, BeamStart
+ , Space
+c, Note
+ , Space
+b, Note
+ , Space
+d, Note
+], BeamEnd
+  , Space
+c, Note
+[, BeamStart
+ , Space
+b, Note
+ , Space
+a, Note
+ , Space
+g, Note
+], BeamEnd
+  , Space
+fis, Note
+[, BeamStart
+ , Space
+a, Note
+ , Space
+g, Note
+ , Space
+b, Note
+], BeamEnd
+              , Space
+|, PipeSymbol
+ , Space
+% 4, LineComment
+
+   , Space
+a, Note
+8, Length
+[, BeamStart
+ , Space
+d, Note
+,, Octave
+], BeamEnd
+  , Space
+c, Note
+', Octave
+8, Length
+., Dot
+[, BeamStart
+^, Direction
+\mordent, ArticulationCommand
+ , Space
+d, Note
+16, Length
+], BeamEnd
+  , Space
+b, Note
+[, BeamStart
+ , Space
+a, Note
+ , Space
+g, Note
+ , Space
+fis, Note
+], BeamEnd
+  , Space
+e, Note
+[, BeamStart
+ , Space
+g, Note
+ , Space
+fis, Note
+ , Space
+a, Note
+], BeamEnd
+    , Space
+|, PipeSymbol
+ , Space
+% 5, LineComment
+
+   , Space
+g, Note
+[, BeamStart
+ , Space
+b, Note
+ , Space
+a, Note
+ , Space
+c, Note
+], BeamEnd
+  , Space
+b, Note
+[, BeamStart
+ , Space
+d, Note
+ , Space
+c, Note
+ , Space
+e, Note
+], BeamEnd
+  , Space
+d, Note
+[, BeamStart
+ , Space
+b, Note
+32, Length
+ , Space
+c, Note
+ , Space
+d, Note
+16, Length
+ , Space
+g, Note
+], BeamEnd
+  , Space
+b, Note
+,, Octave
+8, Length
+[, BeamStart
+^, Direction
+\prall, ArticulationCommand
+ , Space
+a, Note
+16, Length
+ , Space
+g, Note
+], BeamEnd
+ , Space
+|, PipeSymbol
+ , Space
+% 6, LineComment
+
+   , Space
+g, Note
+8, Length
+ , Space
+r, Rest
+ , Space
+r, Rest
+4, Length
+ , Space
+r, Rest
+16, Length
+  , Space
+g, Note
+[, BeamStart
+ , Space
+a, Note
+ , Space
+b, Note
+], BeamEnd
+  , Space
+c, Note
+[, BeamStart
+ , Space
+a, Note
+ , Space
+b, Note
+ , Space
+g, Note
+], BeamEnd
+                           , Space
+|, PipeSymbol
+ , Space
+% 7, LineComment
+
+   , Space
+fis, Note
+8, Length
+^, Direction
+\prall, ArticulationCommand
+ , Space
+r, Rest
+ , Space
+r, Rest
+4, Length
+ , Space
+r, Rest
+16, Length
+  , Space
+a, Note
+[, BeamStart
+ , Space
+b, Note
+ , Space
+c, Note
+], BeamEnd
+  , Space
+d, Note
+[, BeamStart
+ , Space
+b, Note
+ , Space
+c, Note
+ , Space
+a, Note
+], BeamEnd
+                  , Space
+|, PipeSymbol
+ , Space
+% 8, LineComment
+
+   , Space
+b, Note
+8, Length
+          , Space
+r, Rest
+ , Space
+r, Rest
+4, Length
+ , Space
+r, Rest
+16, Length
+  , Space
+d, Note
+[, BeamStart
+ , Space
+c, Note
+ , Space
+b, Note
+], BeamEnd
+  , Space
+a, Note
+[, BeamStart
+ , Space
+c, Note
+ , Space
+b, Note
+ , Space
+d, Note
+], BeamEnd
+                  , Space
+|, PipeSymbol
+ , Space
+% 9, LineComment
+
+   , Space
+c, Note
+8, Length
+          , Space
+r, Rest
+ , Space
+r, Rest
+4, Length
+ , Space
+r, Rest
+16, Length
+  , Space
+e, Note
+[, BeamStart
+ , Space
+d, Note
+ , Space
+c, Note
+], BeamEnd
+  , Space
+b, Note
+[, BeamStart
+ , Space
+d, Note
+ , Space
+cis, Note
+ , Space
+e, Note
+], BeamEnd
+                , Space
+|, PipeSymbol
+ , Space
+% 10, LineComment
+
+   , Space
+d, Note
+8, Length
+[, BeamStart
+ , Space
+cis, Note
+ , Space
+d, Note
+ , Space
+e, Note
+], BeamEnd
+  , Space
+f, Note
+[, BeamStart
+ , Space
+a, Note
+,, Octave
+ , Space
+b, Note
+!, AccidentalReminder
+ , Space
+cis, Note
+], BeamEnd
+                               , Space
+|, PipeSymbol
+ , Space
+% 11, LineComment
+
+   , Space
+d, Note
+[, BeamStart
+ , Space
+fis, Note
+,, Octave
+ , Space
+gis, Note
+ , Space
+a, Note
+], BeamEnd
+  , Space
+b, Note
+[, BeamStart
+ , Space
+c, Note
+], BeamEnd
+ , Space
+d, Note
+4, Length
+ , Space
+~, Tie
+                                , Space
+|, PipeSymbol
+ , Space
+% 12, LineComment
+
+   , Space
+d, Note
+16, Length
+[, BeamStart
+ , Space
+e, Note
+,, Octave
+ , Space
+fis, Note
+ , Space
+gis, Note
+], BeamEnd
+  , Space
+a, Note
+[, BeamStart
+ , Space
+fis, Note
+ , Space
+gis, Note
+ , Space
+e, Note
+], BeamEnd
+  , Space
+e, Note
+', Octave
+[, BeamStart
+ , Space
+d, Note
+ , Space
+c, Note
+ , Space
+e, Note
+], BeamEnd
+  , Space
+d, Note
+[, BeamStart
+ , Space
+c, Note
+ , Space
+b, Note
+ , Space
+d, Note
+], BeamEnd
+    , Space
+|, PipeSymbol
+ , Space
+% 13, LineComment
+
+   , Space
+c, Note
+[, BeamStart
+ , Space
+a, Note
+', Octave
+ , Space
+gis, Note
+ , Space
+b, Note
+], BeamEnd
+  , Space
+a, Note
+[, BeamStart
+ , Space
+e, Note
+ , Space
+f, Note
+ , Space
+d, Note
+], BeamEnd
+  , Space
+gis, Note
+,, Octave
+[, BeamStart
+ , Space
+f, Note
+', Octave
+ , Space
+e, Note
+ , Space
+d, Note
+], BeamEnd
+  , Space
+c, Note
+8, Length
+[, BeamStart
+ , Space
+b, Note
+16, Length
+ , Space
+a, Note
+], BeamEnd
+        , Space
+|, PipeSymbol
+ , Space
+% 14, LineComment
+
+   , Space
+a, Note
+16, Length
+[, BeamStart
+ , Space
+a, Note
+', Octave
+ , Space
+g, Note
+ , Space
+f, Note
+], BeamEnd
+  , Space
+e, Note
+[, BeamStart
+ , Space
+g, Note
+ , Space
+f, Note
+ , Space
+a, Note
+], BeamEnd
+ , Space
+g, Note
+2, Length
+ , Space
+~, Tie
+                              , Space
+|, PipeSymbol
+ , Space
+% 15, LineComment
+
+   , Space
+g, Note
+16, Length
+[, BeamStart
+ , Space
+e, Note
+ , Space
+f, Note
+ , Space
+g, Note
+], BeamEnd
+   , Space
+a, Note
+[, BeamStart
+ , Space
+f, Note
+ , Space
+g, Note
+ , Space
+e, Note
+], BeamEnd
+ , Space
+f, Note
+2, Length
+ , Space
+~, Tie
+                              , Space
+|, PipeSymbol
+ , Space
+% 16, LineComment
+
+   , Space
+f, Note
+16, Length
+[, BeamStart
+ , Space
+g, Note
+ , Space
+f, Note
+ , Space
+e, Note
+], BeamEnd
+   , Space
+d, Note
+[, BeamStart
+ , Space
+f, Note
+ , Space
+e, Note
+ , Space
+g, Note
+], BeamEnd
+ , Space
+f, Note
+2, Length
+ , Space
+~, Tie
+                              , Space
+|, PipeSymbol
+ , Space
+% 17, LineComment
+
+   , Space
+f, Note
+16, Length
+[, BeamStart
+ , Space
+d, Note
+ , Space
+e, Note
+ , Space
+f, Note
+], BeamEnd
+   , Space
+g, Note
+[, BeamStart
+ , Space
+e, Note
+ , Space
+f, Note
+ , Space
+d, Note
+], BeamEnd
+ , Space
+e, Note
+2, Length
+ , Space
+~, Tie
+                              , Space
+|, PipeSymbol
+ , Space
+% 18, LineComment
+
+   , Space
+e, Note
+16, Length
+[, BeamStart
+ , Space
+c, Note
+ , Space
+d, Note
+ , Space
+e, Note
+], BeamEnd
+  , Space
+f, Note
+[, BeamStart
+ , Space
+d, Note
+ , Space
+e, Note
+ , Space
+c, Note
+], BeamEnd
+  , Space
+d, Note
+[, BeamStart
+ , Space
+e, Note
+ , Space
+f, Note
+ , Space
+g, Note
+], BeamEnd
+  , Space
+a, Note
+[, BeamStart
+ , Space
+f, Note
+ , Space
+g, Note
+ , Space
+e, Note
+], BeamEnd
+              , Space
+|, PipeSymbol
+ , Space
+% 19, LineComment
+
+   , Space
+f, Note
+[, BeamStart
+   , Space
+g, Note
+ , Space
+a, Note
+ , Space
+b, Note
+], BeamEnd
+  , Space
+c, Note
+[, BeamStart
+ , Space
+a, Note
+ , Space
+b, Note
+ , Space
+g, Note
+], BeamEnd
+  , Space
+c, Note
+8, Length
+[, BeamStart
+ , Space
+g, Note
+], BeamEnd
+  , Space
+e, Note
+[, BeamStart
+ , Space
+d, Note
+16, Length
+ , Space
+c, Note
+], BeamEnd
+                 , Space
+|, PipeSymbol
+ , Space
+% 20, LineComment
+
+   , Space
+c, Note
+[, BeamStart
+ , Space
+bes, Note
+ , Space
+a, Note
+ , Space
+g, Note
+], BeamEnd
+  , Space
+f, Note
+[, BeamStart
+ , Space
+a, Note
+ , Space
+g, Note
+ , Space
+bes, Note
+], BeamEnd
+  , Space
+a, Note
+[, BeamStart
+ , Space
+b, Note
+ , Space
+c, Note
+ , Space
+e, Note
+,, Octave
+], BeamEnd
+  , Space
+d, Note
+[, BeamStart
+ , Space
+c, Note
+', Octave
+ , Space
+f, Note
+,, Octave
+ , Space
+b, Note
+], BeamEnd
+         , Space
+|, PipeSymbol
+ , Space
+% 21, LineComment
+
+   , Space
+<, ChordStart
+c, Note
+ , Space
+g, Note
+ , Space
+e, Note
+>, ChordEnd
+1, Length
+^, Direction
+\fermata, ArticulationCommand
+\arpeggio, Command
+                                , Space
+|, PipeSymbol
+ , Space
+% 22, LineComment
+
+   , Space
+\bar, Command
+ , Space
+", StringQuotedStart
+|., String
+", StringQuotedEnd
+
+, Space
+}, SequentialEnd
+
+
+, Space
+voicetwo, Name
+ , Space
+=, EqualSign
+
+, Space
+\relative, PitchCommand
+ , Space
+c, Note
+ , Space
+{, SequentialStart
+
+   , Space
+\clef, Clef
+ , Space
+", StringQuotedStart
+bass, String
+", StringQuotedEnd
+
+   , Space
+r, Rest
+2, Length
+          , Space
+r, Rest
+16, Length
+   , Space
+c, Note
+[, BeamStart
+ , Space
+d, Note
+ , Space
+e, Note
+], BeamEnd
+  , Space
+f, Note
+[, BeamStart
+ , Space
+d, Note
+ , Space
+e, Note
+ , Space
+c, Note
+], BeamEnd
+                      , Space
+|, PipeSymbol
+ , Space
+% 1, LineComment
+
+   , Space
+g, Note
+', Octave
+8, Length
+[, BeamStart
+ , Space
+g, Note
+,, Octave
+], BeamEnd
+ , Space
+r, Rest
+4, Length
+ , Space
+r, Rest
+16, Length
+  , Space
+g, Note
+', Octave
+[, BeamStart
+ , Space
+a, Note
+ , Space
+b, Note
+], BeamEnd
+  , Space
+c, Note
+[, BeamStart
+ , Space
+a, Note
+ , Space
+b, Note
+ , Space
+g, Note
+], BeamEnd
+                      , Space
+|, PipeSymbol
+ , Space
+% 2, LineComment
+
+   , Space
+c, Note
+8, Length
+[, BeamStart
+ , Space
+b, Note
+ , Space
+c, Note
+ , Space
+d, Note
+], BeamEnd
+  , Space
+e, Note
+[, BeamStart
+ , Space
+g, Note
+,, Octave
+ , Space
+a, Note
+ , Space
+b, Note
+], BeamEnd
+                                    , Space
+|, PipeSymbol
+ , Space
+% 3, LineComment
+
+   , Space
+c, Note
+[, BeamStart
+ , Space
+e, Note
+,, Octave
+ , Space
+fis, Note
+ , Space
+g, Note
+], BeamEnd
+  , Space
+a, Note
+[, BeamStart
+ , Space
+b, Note
+], BeamEnd
+ , Space
+c, Note
+4, Length
+ , Space
+~, Tie
+                                  , Space
+|, PipeSymbol
+ , Space
+% 4, LineComment
+
+   , Space
+c, Note
+16, Length
+[, BeamStart
+ , Space
+d, Note
+,, Octave
+ , Space
+e, Note
+ , Space
+fis, Note
+], BeamEnd
+  , Space
+g, Note
+[, BeamStart
+ , Space
+e, Note
+ , Space
+fis, Note
+ , Space
+d, Note
+], BeamEnd
+  , Space
+g, Note
+8, Length
+[, BeamStart
+ , Space
+b, Note
+,, Octave
+ , Space
+c, Note
+ , Space
+d, Note
+], BeamEnd
+                  , Space
+|, PipeSymbol
+ , Space
+% 5, LineComment
+
+   , Space
+e, Note
+[, BeamStart
+ , Space
+fis, Note
+ , Space
+g, Note
+ , Space
+e, Note
+], BeamEnd
+  , Space
+b, Note
+8, Length
+., Dot
+[, BeamStart
+ , Space
+c, Note
+16, Length
+], BeamEnd
+  , Space
+d, Note
+8, Length
+[, BeamStart
+ , Space
+d, Note
+,, Octave
+], BeamEnd
+                           , Space
+|, PipeSymbol
+ , Space
+% 6, LineComment
+
+   , Space
+r, Rest
+16, Length
+  , Space
+g, Note
+[, BeamStart
+ , Space
+a, Note
+ , Space
+b, Note
+], BeamEnd
+  , Space
+c, Note
+[, BeamStart
+ , Space
+a, Note
+ , Space
+b, Note
+ , Space
+g, Note
+], BeamEnd
+  , Space
+d, Note
+', Octave
+8, Length
+[, BeamStart
+ , Space
+g, Note
+ , Space
+fis, Note
+ , Space
+g, Note
+], BeamEnd
+                    , Space
+|, PipeSymbol
+ , Space
+% 7, LineComment
+
+   , Space
+a, Note
+16, Length
+[, BeamStart
+ , Space
+d, Note
+,, Octave
+ , Space
+e, Note
+ , Space
+fis, Note
+], BeamEnd
+  , Space
+g, Note
+[, BeamStart
+ , Space
+e, Note
+ , Space
+fis, Note
+ , Space
+d, Note
+], BeamEnd
+  , Space
+a, Note
+', Octave
+8, Length
+[, BeamStart
+ , Space
+d, Note
+ , Space
+c, Note
+ , Space
+d, Note
+], BeamEnd
+                  , Space
+|, PipeSymbol
+ , Space
+% 8, LineComment
+
+   , Space
+g, Note
+,, Octave
+16, Length
+[, BeamStart
+ , Space
+\clef, Clef
+ , Space
+", StringQuotedStart
+treble, String
+", StringQuotedEnd
+ , Space
+g, Note
+', Octave
+ , Space
+f, Note
+ , Space
+e, Note
+], BeamEnd
+  , Space
+d, Note
+[, BeamStart
+ , Space
+f, Note
+ , Space
+e, Note
+ , Space
+g, Note
+], BeamEnd
+  , Space
+f, Note
+8, Length
+[, BeamStart
+ , Space
+e, Note
+ , Space
+f, Note
+ , Space
+d, Note
+], BeamEnd
+       , Space
+|, PipeSymbol
+ , Space
+% 9, LineComment
+
+   , Space
+e, Note
+16, Length
+[, BeamStart
+ , Space
+a, Note
+ , Space
+g, Note
+ , Space
+f, Note
+], BeamEnd
+  , Space
+e, Note
+[, BeamStart
+ , Space
+g, Note
+ , Space
+f, Note
+ , Space
+a, Note
+], BeamEnd
+  , Space
+g, Note
+8, Length
+[, BeamStart
+ , Space
+f, Note
+ , Space
+g, Note
+ , Space
+e, Note
+], BeamEnd
+                        , Space
+|, PipeSymbol
+ , Space
+% 10, LineComment
+
+   , Space
+f, Note
+16, Length
+[, BeamStart
+ , Space
+bes, Note
+ , Space
+a, Note
+ , Space
+g, Note
+], BeamEnd
+  , Space
+f, Note
+[, BeamStart
+ , Space
+a, Note
+ , Space
+g, Note
+ , Space
+bes, Note
+], BeamEnd
+  , Space
+a, Note
+[, BeamStart
+ , Space
+g, Note
+ , Space
+f, Note
+ , Space
+e, Note
+], BeamEnd
+  , Space
+d, Note
+[, BeamStart
+ , Space
+f, Note
+ , Space
+e, Note
+ , Space
+g, Note
+], BeamEnd
+          , Space
+|, PipeSymbol
+ , Space
+% 11, LineComment
+
+   , Space
+f, Note
+[, BeamStart
+ , Space
+e, Note
+ , Space
+d, Note
+ , Space
+c, Note
+], BeamEnd
+  , Space
+b, Note
+[, BeamStart
+ , Space
+d, Note
+ , Space
+c, Note
+ , Space
+e, Note
+], BeamEnd
+  , Space
+d, Note
+[, BeamStart
+ , Space
+c, Note
+ , Space
+b, Note
+ , Space
+a, Note
+], BeamEnd
+  , Space
+gis, Note
+[, BeamStart
+ , Space
+b, Note
+ , Space
+a, Note
+ , Space
+c, Note
+], BeamEnd
+              , Space
+|, PipeSymbol
+ , Space
+% 12, LineComment
+
+   , Space
+\clef, Clef
+ , Space
+", StringQuotedStart
+bass, String
+", StringQuotedEnd
+
+   , Space
+b, Note
+8, Length
+[, BeamStart
+ , Space
+e, Note
+,, Octave
+], BeamEnd
+  , Space
+d, Note
+', Octave
+8, Length
+., Dot
+[, BeamStart
+^, Direction
+\mordent, ArticulationCommand
+ , Space
+e, Note
+16, Length
+], BeamEnd
+  , Space
+c, Note
+[, BeamStart
+ , Space
+b, Note
+ , Space
+a, Note
+ , Space
+g, Note
+!, AccidentalReminder
+], BeamEnd
+  , Space
+fis, Note
+[, BeamStart
+ , Space
+a, Note
+ , Space
+gis, Note
+ , Space
+b, Note
+], BeamEnd
+   , Space
+|, PipeSymbol
+ , Space
+% 13, LineComment
+
+   , Space
+a, Note
+[, BeamStart
+ , Space
+c, Note
+ , Space
+b, Note
+ , Space
+d, Note
+], BeamEnd
+  , Space
+c, Note
+[, BeamStart
+ , Space
+e, Note
+ , Space
+d, Note
+ , Space
+f, Note
+], BeamEnd
+  , Space
+e, Note
+8, Length
+[, BeamStart
+ , Space
+a, Note
+,, Octave
+ , Space
+e, Note
+', Octave
+ , Space
+e, Note
+,, Octave
+], BeamEnd
+                       , Space
+|, PipeSymbol
+ , Space
+% 14, LineComment
+
+   , Space
+a, Note
+8, Length
+[, BeamStart
+ , Space
+a, Note
+,, Octave
+], BeamEnd
+ , Space
+r, Rest
+4, Length
+ , Space
+r, Rest
+16, Length
+  , Space
+e, Note
+'', Octave
+16, Length
+[, BeamStart
+ , Space
+d, Note
+ , Space
+c, Note
+], BeamEnd
+  , Space
+b, Note
+[, BeamStart
+ , Space
+d, Note
+ , Space
+cis, Note
+ , Space
+e, Note
+], BeamEnd
+                  , Space
+|, PipeSymbol
+ , Space
+% 15, LineComment
+
+   , Space
+d, Note
+2, Length
+ , Space
+~, Tie
+  , Space
+d, Note
+16, Length
+[, BeamStart
+ , Space
+a, Note
+ , Space
+b, Note
+ , Space
+c, Note
+], BeamEnd
+    , Space
+d, Note
+[, BeamStart
+ , Space
+b, Note
+ , Space
+c, Note
+ , Space
+a, Note
+], BeamEnd
+                            , Space
+|, PipeSymbol
+ , Space
+% 16, LineComment
+
+   , Space
+b, Note
+2, Length
+ , Space
+~, Tie
+  , Space
+b, Note
+16, Length
+[, BeamStart
+ , Space
+d, Note
+ , Space
+c, Note
+ , Space
+b, Note
+], BeamEnd
+    , Space
+a, Note
+[, BeamStart
+ , Space
+c, Note
+ , Space
+b, Note
+ , Space
+d, Note
+], BeamEnd
+                            , Space
+|, PipeSymbol
+ , Space
+% 17, LineComment
+
+   , Space
+c, Note
+2, Length
+ , Space
+~, Tie
+  , Space
+c, Note
+16, Length
+[, BeamStart
+ , Space
+g, Note
+ , Space
+a, Note
+ , Space
+bes, Note
+], BeamEnd
+  , Space
+c, Note
+[, BeamStart
+ , Space
+a, Note
+ , Space
+bes, Note
+ , Space
+g, Note
+], BeamEnd
+                          , Space
+|, PipeSymbol
+ , Space
+% 18, LineComment
+
+   , Space
+a, Note
+8, Length
+[, BeamStart
+ , Space
+bes, Note
+ , Space
+a, Note
+ , Space
+g, Note
+], BeamEnd
+  , Space
+f, Note
+[, BeamStart
+ , Space
+d, Note
+', Octave
+ , Space
+c, Note
+ , Space
+bes, Note
+], BeamEnd
+                                , Space
+|, PipeSymbol
+ , Space
+% 19, LineComment
+
+   , Space
+a, Note
+[, BeamStart
+ , Space
+f, Note
+', Octave
+ , Space
+e, Note
+ , Space
+d, Note
+], BeamEnd
+    , Space
+e, Note
+16, Length
+[, BeamStart
+ , Space
+d, Note
+,, Octave
+ , Space
+e, Note
+ , Space
+f, Note
+], BeamEnd
+  , Space
+g, Note
+[, BeamStart
+ , Space
+e, Note
+ , Space
+f, Note
+ , Space
+d, Note
+], BeamEnd
+                     , Space
+|, PipeSymbol
+ , Space
+% 20, LineComment
+
+   , Space
+e, Note
+8, Length
+[, BeamStart
+ , Space
+c, Note
+ , Space
+d, Note
+ , Space
+e, Note
+], BeamEnd
+  , Space
+f, Note
+16, Length
+[, BeamStart
+ , Space
+d, Note
+ , Space
+e, Note
+ , Space
+f, Note
+], BeamEnd
+  , Space
+g, Note
+8, Length
+[, BeamStart
+ , Space
+g, Note
+,, Octave
+], BeamEnd
+                          , Space
+|, PipeSymbol
+ , Space
+% 21, LineComment
+
+   , Space
+<, ChordStart
+c, Note
+ , Space
+c, Note
+,, Octave
+>, ChordEnd
+1, Length
+\, Unparsed
+arpeggio, Note
+_, Direction
+\fermata, ArticulationCommand
+                                 , Space
+|, PipeSymbol
+ , Space
+% 22, LineComment
+
+   , Space
+\bar, Command
+ , Space
+", StringQuotedStart
+|., String
+", StringQuotedEnd
+
+, Space
+}, SequentialEnd
+
+
+, Space
+\score, Score
+ , Space
+{, OpenBracket
+
+   , Space
+\context, Context
+ , Space
+PianoStaff, ContextName
+ , Space
+<<, SimultaneousStart
+
+      , Space
+\set, Set
+ , Space
+PianoStaff, ContextName
+., DotPath
+connectArpeggios, ContextProperty
+ , Space
+=, EqualSign
+ , Space
+#, SchemeStart
+#t, Bool
+
+      , Space
+\context, Context
+ , Space
+Staff, ContextName
+ , Space
+=, EqualSign
+ , Space
+", StringQuotedStart
+one, String
+", StringQuotedEnd
+ , Space
+<<, SimultaneousStart
+ , Space
+\voiceone, UserCommand
+ , Space
+>>, SimultaneousEnd
+
+      , Space
+\context, Context
+ , Space
+Staff, ContextName
+ , Space
+=, EqualSign
+ , Space
+", StringQuotedStart
+two, String
+", StringQuotedEnd
+ , Space
+<<, SimultaneousStart
+ , Space
+\voicetwo, UserCommand
+ , Space
+>>, SimultaneousEnd
+
+   , Space
+>>, SimultaneousEnd
+
+   
+   , Space
+\layout, Layout
+ , Space
+{, OpenBracket
+ , Space
+}, CloseBracket
+
+   
+  , Space
+\midi, Midi
+ , Space
+{, OpenBracket
+
+    , Space
+\context, LayoutContext
+ , Space
+{, OpenBracket
+
+      , Space
+\Score, BackSlashedContextName
+
+      , Space
+tempoWholesPerMinute, ContextProperty
+ , Space
+=, EqualSign
+ , Space
+#, SchemeStart
+(, OpenParen
+ly:make-moment, Function
+ , Space
+80, Number
+ , Space
+4, Number
+), CloseParen
+
+      , Space
+}, CloseBracket
+
+    , Space
+}, CloseBracket
+
+, Space
+}, CloseBracket
+
+, Space
