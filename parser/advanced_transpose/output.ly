@@ -13,9 +13,9 @@ voiceone =
     bis8          r r4 r16   dis[  cis bis]   ais[  cis bis dis]                  | % 9
     cis8          r r4 r16   eis[  dis cis]   bis[  dis d eis]                | % 10
     dis8[  d dis eis]   fis[  ais, bis! d]                               | % 11
-    dis[  g, a ais]   bis[  cis]  dis4 ~                                | % 12
-    dis16[  eis, g a]   ais[  g a eis]   eis'[  dis cis eis]   dis[  cis bis dis]    | % 13
-    cis[  ais' a bis]   ais[  eis fis dis]   a,[  fis' eis dis]   cis8[  bis16  ais]        | % 14
+    dis[  g, gis ais]   bis[  cis]  dis4 ~                                | % 12
+    dis16[  eis, g gis]   ais[  g gis eis]   eis'[  dis cis eis]   dis[  cis bis dis]    | % 13
+    cis[  ais' gis bis]   ais[  eis fis dis]   gis,[  fis' eis dis]   cis8[  bis16  ais]        | % 14
     ais16[  ais' gis fis]   eis[  gis fis ais]  gis2 ~                              | % 15
     gis16[  eis fis gis]    ais[  fis gis eis]  fis2 ~                              | % 16
     fis16[  gis fis eis]    dis[  fis eis gis]  fis2 ~                              | % 17
@@ -41,9 +41,9 @@ voicetwo =
     gis,16[ \clef "treble"  gis' fis eis]   dis[  fis eis gis]   fis8[  eis fis dis]       | % 9
     eis16[  ais gis fis]   eis[  gis fis ais]   gis8[  fis gis eis]                        | % 10
     fis16[  b ais gis]   fis[  ais gis b]   ais[  gis fis eis]   dis[  fis eis gis]          | % 11
-    fis[  eis dis cis]   bis[  dis cis eis]   dis[  cis bis ais]   a[  bis ais cis]              | % 12
+    fis[  eis dis cis]   bis[  dis cis eis]   dis[  cis bis ais]   gis[  bis ais cis]              | % 12
    \clef "bass"
-    bis8[  eis,]   dis'8.[^\mordent  eis16]   cis[  bis ais gis!]   g[  ais a bis]   | % 13
+    bis8[  eis,]   dis'8.[^\mordent  eis16]   cis[  bis ais gis!]   g[  ais gis bis]   | % 13
     ais[  cis bis dis]   cis[  eis dis fis]   eis8[  ais, eis' eis,]                       | % 14
     ais8[  ais,] r4 r16   eis''16[  dis cis]   bis[  dis d eis]                  | % 15
     dis2 ~   dis16[  ais bis cis]     dis[  bis cis ais]                            | % 16
