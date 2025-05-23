@@ -61,13 +61,8 @@ def main():
 				continue
 			print(f"{i} {i.note} {i.octave} {i.alter}")
 			transposer_custom.transpose(i)
-			if 4 == i.note:
-				if i.alter < 0:
-					i.alter = Fraction(-1, 2)
-				else:
-					i.alter = Fraction(1, 2)
 			print(f"{i} {i.note} {i.octave} {i.alter}")
-			simplify.transpose(i)
+			#simplify.transpose(i)
 			out_str = i.output('nederlands')
 			file.write(f" {out_str}")
 
