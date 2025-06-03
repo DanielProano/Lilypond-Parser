@@ -1,3 +1,5 @@
+![Kundalini_Software_Internship_Code](https://github.com/user-attachments/assets/ef47fe92-cd52-4f23-a821-05430412deca)
+
 # Internship Code
 This is the open source code I made for my internship with Kundalini Software.
 
