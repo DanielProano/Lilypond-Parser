@@ -34,8 +34,8 @@ def semi_to_pitch(semitone):
 def invert(note, axis):
 	note_semi = pitch_to_semi(note)
 	axis_semi = pitch_to_semi(axis) 
-	inverted_note = 2 * axis_semi - note_semi
-	return semi_to_pitch(inverted_note)
+	inverted_semi = 2 * axis_semi - note_semi
+	return semi_to_pitch(inverted_semi)
 
 def adjust_relative_octave(prev_pitch, curr_pitch):
     prev_semi = pitch_to_semi(prev_pitch)
@@ -49,16 +49,18 @@ def adjust_relative_octave(prev_pitch, curr_pitch):
 
     return min(options, key=lambda x: x[0])[1]
 
+
 def main():
-	with open("d_scale.ly", "r") as file:
+	with open("music.ly", "r") as file:
 		content = file.read()
 
 	s = ly.lex.state("lilypond")
 	all_pitches = PitchIterator(s.tokens(content), language='nederlands')
 
-	axis = Pitch(1, 0, 1)
-	prev_pitch = None
+	axis = Pitch(0, 0, 1)
 	note_in_the_key = False
+	simplifier = Simplifier()
+	prev_pitch = None
 
 	with open("output.ly", "w") as file:
 		for i in all_pitches.pitches():
@@ -78,19 +80,17 @@ def main():
 				note_in_the_key = True
 				continue
 
-			note = i.output('nederlands')
-			if "'" in note or "," in note:
-				inverted_note = invert(i, axis)
-				out_str = inverted_note.output('nederlands')
-				prev_pitch = inverted_note
-				file.write(f" {out_str}")
-				continue
-			inverted_note = invert(i, axis)
-			adjusted = adjust_relative_octave(prev_pitch, inverted_note)
-			adjusted.octave = 0
-			prev_pitch = adjusted
+			print(i)
+			inv = invert(i, axis)
+			print(inv)
+			inv = simplifier.transpose(inv) or inv
+			print(inv)
+			if prev_pitch:
+				inv = adjust_relative_octave(prev_pitch, inv)
+				print(inv)
+			prev_pitch = inv
+			print(" ")
+			file.write(f" {inv.output('nederlands')}")
 			
-			out_str = adjusted.output('nederlands')
-			file.write(f" {out_str}")
 if __name__ == "__main__":
 	main()
