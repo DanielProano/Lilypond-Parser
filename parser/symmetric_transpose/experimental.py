@@ -1,53 +1,42 @@
 from ly.document import Document, Cursor
 
 import ly.lex
+from ly.music import items
 from ly.pitch import PitchIterator
 from ly.pitch.transpose import Transposer, Simplifier
 from ly.pitch import Pitch
 from fractions import Fraction
 import math
 
-NOTE_TO_SEMI = [0, 2, 4, 5, 7, 9, 11]
+SEMI_TO_NOTE_31 = [0, 5, 9, 13, 18, 22, 27]
 
+def pitch_to_semi_31(note):
+	return SEMI_TO_NOTE_31[note.note] + note.alter + note.octave * 31
 
-#Takes a note to its corresponding semitone
-def pitch_to_semi(note):
-	return NOTE_TO_SEMI[note.note] + note.alter + 12 * (note.octave + 4)
+def semi_to_pitch_31(semi):
+	octave = semi // 31
+	print(f"Octave: {octave}")
+	semi_in_octave = semi % 31
 
-#Takes a semitone back to its pitch
-def semi_to_pitch(semitone):
-	octave = math.floor(semitone / 12)
-	semi_in_octave = semitone - 12 * octave
-
-	best_note = 0
-	min_distance = float('inf')
-	for i in range(7):
-		potential = abs(NOTE_TO_SEMI[i] - semi_in_octave)
-		if potential < min_distance:
-			min_distance = potential
-			best_note = i
-	alter = semi_in_octave - NOTE_TO_SEMI[best_note]
-	alter = round(alter * 2) / 2
-	return Pitch(note=best_note, alter=alter, octave=octave - 4)
+	for i in reversed(range(7)):
+		base = SEMI_TO_NOTE_31[i]
+		if base <= semi_in_octave:	
+			note = i
+			alter = semi_in_octave - base
+			print(f"Note: {note}")
+			print(f"Alter: {alter}")
+			return Pitch(note, alter, octave)
 
 #Inverts a note around an axis
 def invert(note, axis):
-	note_semi = pitch_to_semi(note)
-	axis_semi = pitch_to_semi(axis) 
+	print(" ")
+	note_semi = pitch_to_semi_31(note)
+	print(f"Semi: {note_semi}")
+	axis_semi = pitch_to_semi_31(axis) 
+	print(f"Axis semitone: {axis_semi}")
 	inverted_semi = 2 * axis_semi - note_semi
-	return semi_to_pitch(inverted_semi)
-
-def adjust_relative_octave(prev_pitch, curr_pitch):
-    prev_semi = pitch_to_semi(prev_pitch)
-
-    options = []
-    for delta in [-2, -1, 0, 1, 2]:
-        test_pitch = Pitch(curr_pitch.note, curr_pitch.alter, curr_pitch.octave + delta)
-        semi = pitch_to_semi(test_pitch)
-        diff = abs(semi - prev_semi)
-        options.append((diff, test_pitch))
-
-    return min(options, key=lambda x: x[0])[1]
+	print(f"Inverted semitone: {inverted_semi}")
+	return semi_to_pitch_31(inverted_semi)
 
 
 def main():
@@ -58,9 +47,13 @@ def main():
 	all_pitches = PitchIterator(s.tokens(content), language='nederlands')
 
 	axis = Pitch(0, 0, 1)
-	note_in_the_key = False
-	simplifier = Simplifier()
-	prev_pitch = None
+
+	pitch_list = [Pitch(-3, -1, 0), Pitch(-2, -1, 0), Pitch(-1, -1, 0), 
+Pitch(0, -1, 0), Pitch(1, -1, 0), Pitch(2, -1, 0), Pitch(3, -1, 0),
+Pitch(-3, 0, 0), Pitch(-2, 0, 0), Pitch(-1, 0, 0), Pitch(0, 0, 0),
+Pitch(1, 0, 0), Pitch(2, 0, 0), Pitch(3, 0, 0), Pitch(-3, 1, 0),
+Pitch(-2, 1, 0), Pitch(-1, 1, 0), Pitch(0, 1, 0), Pitch(1, 1, 0),
+Pitch(2, 1, 0), Pitch(3, 1, 0)]
 
 	with open("output.ly", "w") as file:
 		for i in all_pitches.pitches():
@@ -73,23 +66,7 @@ def main():
 					continue
 				file.write(i)
 				continue
-	
-			if note_in_the_key == False:
-				inverted = invert(i, axis)
-				file.write(f"{inverted.output('nederlands')} ")
-				note_in_the_key = True
-				continue
-
-			print(i)
 			inv = invert(i, axis)
-			print(inv)
-			inv = simplifier.transpose(inv) or inv
-			print(inv)
-			if prev_pitch:
-				inv = adjust_relative_octave(prev_pitch, inv)
-				print(inv)
-			prev_pitch = inv
-			print(" ")
 			file.write(f" {inv.output('nederlands')}")
 			
 if __name__ == "__main__":

@@ -1,5 +1,6 @@
 from ly.document import Document, Cursor
 
+
 import ly.lex
 from ly.pitch import PitchIterator
 from ly.pitch.transpose import Transposer, Simplifier
@@ -56,7 +57,7 @@ def main():
 	s = ly.lex.state("lilypond")
 	all_pitches = PitchIterator(s.tokens(content), language='nederlands')
 
-	axis = Pitch(1, 0, 1)
+	axis = Pitch(0, 0, 1)
 	prev_pitch = None
 	note_in_the_key = False
 
@@ -85,8 +86,11 @@ def main():
 				prev_pitch = inverted_note
 				file.write(f" {out_str}")
 				continue
+			print(i)
 			inverted_note = invert(i, axis)
+			print(inverted_note)
 			adjusted = adjust_relative_octave(prev_pitch, inverted_note)
+			print(adjusted)
 			adjusted.octave = 0
 			prev_pitch = adjusted
 			
