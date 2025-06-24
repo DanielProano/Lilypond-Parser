@@ -1,7 +1,15 @@
 ![Kundalini_Software_Internship_Code](https://github.com/user-attachments/assets/ef47fe92-cd52-4f23-a821-05430412deca)
 
-# Internship Code
-This is the open source code I made for my internship with Kundalini Software.
+# Overview
+This is the open source code I made for my internship with Kundalini Software. 
+
+In this project, I made code that interacts with and interprets Lilypond.
+
+The main application is read-in music and then apply a symmetrical inversion,
+
+maintaining the pitch and reflecting the music into a different clef. This allows
+
+piano players to practice ambidextrousity while playing tunes they are familiar with.
 
 ## Folder: C-Scale
 In this folder, I created my first Lilypond code, experimenting with how to read and write .ly files.
