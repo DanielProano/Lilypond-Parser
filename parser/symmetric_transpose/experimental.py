@@ -8,15 +8,24 @@ from ly.pitch import Pitch
 from fractions import Fraction
 import math
 
+
+# These numbers represent the steps from C in a 31 TET system
 SEMI_TO_NOTE_31 = [0, 5, 9, 13, 18, 22, 27]
 
+
+# Pitch to 31 TET MIDI representation
 def pitch_to_semi_31(note):
 	return SEMI_TO_NOTE_31[note.note] + note.alter + note.octave * 31
 
+
+# MIDI representation to a Pitch object
 def semi_to_pitch_31(semi):
 	octave = semi // 31
 	print(f"Octave: {octave}")
 	semi_in_octave = semi % 31
+
+	# Starts at the largest range possible and goes
+	# until the note closest to the Pitch is found
 
 	for i in reversed(range(7)):
 		base = SEMI_TO_NOTE_31[i]
@@ -26,6 +35,7 @@ def semi_to_pitch_31(semi):
 			print(f"Note: {note}")
 			print(f"Alter: {alter}")
 			return Pitch(note, alter, octave)
+
 
 #Inverts a note around an axis
 def invert(note, axis):
@@ -48,6 +58,8 @@ def main():
 
 	axis = Pitch(0, 0, 1)
 
+	# A list for testing purposes, composing of all the basic pitches
+	# necessary.
 	pitch_list = [Pitch(-3, -1, 0), Pitch(-2, -1, 0), Pitch(-1, -1, 0), 
 Pitch(0, -1, 0), Pitch(1, -1, 0), Pitch(2, -1, 0), Pitch(3, -1, 0),
 Pitch(-3, 0, 0), Pitch(-2, 0, 0), Pitch(-1, 0, 0), Pitch(0, 0, 0),

@@ -10,9 +10,9 @@ In addition, I also discovered how to save the Lilypond code as a pdf.
 
 ## Folder: Parser
 
-### Original
+### C Scale
 
-In this folder, I started to make the parsing code. I first experimented with
+In this folder, I started to make the parsing code. I first experimented with 
 
 reading in a Lilypond file programmatically. Before, I only transposed with
 

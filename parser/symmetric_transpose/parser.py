@@ -1,6 +1,4 @@
 from ly.document import Document, Cursor
-
-
 import ly.lex
 from ly.pitch import PitchIterator
 from ly.pitch.transpose import Transposer, Simplifier
@@ -8,20 +6,27 @@ from ly.pitch import Pitch
 from fractions import Fraction
 import math
 
+
+# These numbers represent the distance in semitones from C
 NOTE_TO_SEMI = [0, 2, 4, 5, 7, 9, 11]
 
 
-#Takes a note to its corresponding semitone
+# Takes a pitch and converts it to an MIDI number
 def pitch_to_semi(note):
 	return NOTE_TO_SEMI[note.note] + note.alter + 12 * (note.octave + 4)
 
-#Takes a semitone back to its pitch
+
+# Takes a MIDI system back to a Pitch object for python-ly
 def semi_to_pitch(semitone):
 	octave = math.floor(semitone / 12)
 	semi_in_octave = semitone - 12 * octave
 
 	best_note = 0
 	min_distance = float('inf')
+	
+	# Test every note and see which is the closest to the
+	# position of the pitch
+
 	for i in range(7):
 		potential = abs(NOTE_TO_SEMI[i] - semi_in_octave)
 		if potential < min_distance:
@@ -31,13 +36,17 @@ def semi_to_pitch(semitone):
 	alter = round(alter * 2) / 2
 	return Pitch(note=best_note, alter=alter, octave=octave - 4)
 
-#Inverts a note around an axis
+
+# Inverts the MIDI protocol around an axis
 def invert(note, axis):
-	note_semi = pitch_to_semi(note)
-	axis_semi = pitch_to_semi(axis) 
-	inverted_note = 2 * axis_semi - note_semi
+	note_semi = pitch_to_semi(note) # Now we have an MIDI like 65
+	axis_semi = pitch_to_semi(axis) # We will always use middle C: 60
+	inverted_note = 2 * axis_semi - note_semi 
 	return semi_to_pitch(inverted_note)
 
+
+# Adjust the current pitch to better reflect that of
+# previous notes.
 def adjust_relative_octave(prev_pitch, curr_pitch):
     prev_semi = pitch_to_semi(prev_pitch)
 
@@ -47,8 +56,9 @@ def adjust_relative_octave(prev_pitch, curr_pitch):
         semi = pitch_to_semi(test_pitch)
         diff = abs(semi - prev_semi)
         options.append((diff, test_pitch))
-
     return min(options, key=lambda x: x[0])[1]
+
+
 
 def main():
 	with open("d_scale.ly", "r") as file:
@@ -57,12 +67,13 @@ def main():
 	s = ly.lex.state("lilypond")
 	all_pitches = PitchIterator(s.tokens(content), language='nederlands')
 
-	axis = Pitch(0, 0, 1)
+	axis = Pitch(0, 0, 1) # Middle C, represented as C' in Lilypond
 	prev_pitch = None
 	note_in_the_key = False
 
 	with open("output.ly", "w") as file:
 		for i in all_pitches.pitches():
+			# Print anything that isnt a pitch
 			if not isinstance(i, Pitch):
 				if i == "bass":
 					file.write("treble")
@@ -73,12 +84,15 @@ def main():
 				file.write(i)
 				continue
 	
+			# This handles the initial note telling Lilypond
+			# the octave, its not meant to be inverted
 			if note_in_the_key == False:
 				inverted = invert(i, axis)
 				file.write(f"{inverted.output('nederlands')} ")
 				note_in_the_key = True
 				continue
 
+			# This will invert a note 
 			note = i.output('nederlands')
 			if "'" in note or "," in note:
 				inverted_note = invert(i, axis)
@@ -87,6 +101,10 @@ def main():
 				file.write(f" {out_str}")
 				continue
 			print(i)
+
+			# Invert a regular note but flattens the octave,
+			# allowing Lilypond to handle the contextualization
+
 			inverted_note = invert(i, axis)
 			print(inverted_note)
 			adjusted = adjust_relative_octave(prev_pitch, inverted_note)
