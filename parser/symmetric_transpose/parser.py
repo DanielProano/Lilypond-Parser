@@ -67,52 +67,63 @@ def main():
 	s = ly.lex.state("lilypond")
 	all_pitches = PitchIterator(s.tokens(content), language='nederlands')
 
-	axis = Pitch(0, 0, 1) # Middle C, represented as C' in Lilypond
+	axis = Pitch(1, 0, 1) # Axis of Inversion
 	prev_pitch = None
 	note_in_the_key = False
 
 	with open("output.ly", "w") as file:
+		depth = 0
 		for i in all_pitches.pitches():
 			# Print anything that isnt a pitch
 			if not isinstance(i, Pitch):
-				if i == "bass":
+				token_str = str(i)
+
+				if token_str == '{':
+					depth += 1
+					file.write('{')
+					continue
+				elif token_str == '}':
+					depth -= 1
+					file.write('}')
+					continue
+	
+				if token_str == "bass":
 					file.write("treble")
 					continue
-				elif i == "treble":
+				elif token_str == "treble":
 					file.write("bass")
 					continue
-				file.write(i)
-				continue
-	
-			# This handles the initial note telling Lilypond
-			# the octave, its not meant to be inverted
-			if note_in_the_key == False:
-				inverted = invert(i, axis)
-				file.write(f"{inverted.output('nederlands')} ")
-				note_in_the_key = True
+				
+				file.write(f"{token_str}")
 				continue
 
-			# This will invert a note 
-			note = i.output('nederlands')
-			if "'" in note or "," in note:
+
+			if depth > 0:
+				# This will invert a note 
+				note = i.output('nederlands')
+				if "'" in note or "," in note:
+					inverted_note = invert(i, axis)
+					out_str = inverted_note.output('nederlands')
+					prev_pitch = inverted_note
+					file.write(f"{out_str} ")
+					continue
+				print(i)
+
+				'''
+				Invert a regular note but flattens the octave,
+				allowing Lilypond to handle the contextualization
+				'''
+
 				inverted_note = invert(i, axis)
-				out_str = inverted_note.output('nederlands')
-				prev_pitch = inverted_note
-				file.write(f" {out_str}")
-				continue
-			print(i)
-
-			# Invert a regular note but flattens the octave,
-			# allowing Lilypond to handle the contextualization
-
-			inverted_note = invert(i, axis)
-			print(inverted_note)
-			adjusted = adjust_relative_octave(prev_pitch, inverted_note)
-			print(adjusted)
-			adjusted.octave = 0
-			prev_pitch = adjusted
+				print(inverted_note)
+				adjusted = adjust_relative_octave(prev_pitch, inverted_note) if prev_pitch else inverted_note
+				print(adjusted)
+				adjusted.octave = 0
+				prev_pitch = adjusted
 			
-			out_str = adjusted.output('nederlands')
-			file.write(f" {out_str}")
+				out_str = adjusted.output('nederlands')
+				file.write(f"{out_str} ")
+			else:
+				file.write(i.output('nederlands' ))
 if __name__ == "__main__":
 	main()
