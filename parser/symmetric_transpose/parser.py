@@ -61,13 +61,13 @@ def adjust_relative_octave(prev_pitch, curr_pitch):
 
 
 def main():
-	with open("d_scale.ly", "r") as file:
+	with open("twinkle_twinkle.ly", "r") as file:
 		content = file.read()
 
 	s = ly.lex.state("lilypond")
 	all_pitches = PitchIterator(s.tokens(content), language='nederlands')
 
-	axis = Pitch(1, 0, 1) # Axis of Inversion
+	axis = Pitch(0, 0, 1) # Axis of Inversion
 	prev_pitch = None
 	note_in_the_key = False
 

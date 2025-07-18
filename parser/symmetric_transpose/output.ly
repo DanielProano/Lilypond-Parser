@@ -1,8 +1,17 @@
 \version "2.22.1"
 
-\relative { 
-	\clef bass
-	\key d \major
-	\time 2/4
-	d' c bes a g f es d c bes a g f es d es f g a bes c d es f g a bes c d 2
+\relative c'{
+  \clef bass
+  \key c \major
+  \time 4/4
+
+  c 4 c f f disis disis f 2
+  g 4 g gisis gisis aisis aisis c 2
+
+  f 4 f g g gisis gisis aisis 2
+  f 4 f g g gisis gisis aisis 2
+
+  c 4 c f f disis disis f 2
+  g 4 g gisis gisis aisis aisis c 2
 }
+
