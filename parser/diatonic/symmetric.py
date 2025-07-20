@@ -42,15 +42,14 @@ def main():
 
 
 			if depth > 0:
-				note = i.note
-				inverted_note = 2 * 1 - note % 7
+				inverted_note = 2 * 1 - i.note % 7
 				
 				inverted_alter = -1 * i.alter
 
 				inverted_octave = -1 * i.octave
 				
-				inverted_note = Pitch(inverted_note, inverted_alter, inverted_octave)
-				file.write(i.output('nederlands') + ' ')
+				inverted_note = Pitch(inverted_note, inverted_alter, i.octave)
+				file.write(inverted_note.output('nederlands') + ' ')
 			else:
 				file.write(i.output('nederlands'))
 				print(i)

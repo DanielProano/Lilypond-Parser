@@ -4,5 +4,5 @@
         \clef bass
         \key d \major
         \time 2/4
-        d' e fis g a b cis d e fis g a b cis d cis b a g fis e d cis b a g fis e d 2
+        d' c bes a g f es d c bes a g f es d es f g a bes c d es f g a bes c d 2
 }
