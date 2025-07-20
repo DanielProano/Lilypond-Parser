@@ -40,8 +40,11 @@ def semi_to_pitch(semitone):
 # Inverts the MIDI protocol around an axis
 def invert(note, axis):
 	note_semi = pitch_to_semi(note) # Now we have an MIDI like 65
+	print(note_semi)
 	axis_semi = pitch_to_semi(axis) # We will always use middle C: 60
+	print(axis_semi)
 	inverted_note = 2 * axis_semi - note_semi 
+	print(inverted_note)
 	return semi_to_pitch(inverted_note)
 
 
@@ -99,6 +102,7 @@ def main():
 
 
 			if depth > 0:
+				print()
 				# This will invert a note 
 				note = i.output('nederlands')
 				if "'" in note or "," in note:
@@ -106,8 +110,8 @@ def main():
 					out_str = inverted_note.output('nederlands')
 					prev_pitch = inverted_note
 					file.write(f"{out_str} ")
+					print(out_str)
 					continue
-				print(i)
 
 				'''
 				Invert a regular note but flattens the octave,
@@ -123,6 +127,7 @@ def main():
 			
 				out_str = adjusted.output('nederlands')
 				file.write(f"{out_str} ")
+				print(out_str)
 			else:
 				file.write(i.output('nederlands' ))
 if __name__ == "__main__":
