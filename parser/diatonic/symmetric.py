@@ -8,7 +8,7 @@ import math
 
 
 def main():
-	with open("d_scale.ly", "r") as file:
+	with open("twinkle.ly", "r") as file:
 		content = file.read()
 
 	s = ly.lex.state("lilypond")
@@ -48,10 +48,9 @@ def main():
 
 				inverted_octave = -1 * i.octave
 				
-				inverted_note = Pitch(inverted_note, inverted_alter, i.octave)
+				inverted_note = Pitch(inverted_note, inverted_alter, inverted_octave)
 				file.write(inverted_note.output('nederlands') + ' ')
 			else:
 				file.write(i.output('nederlands'))
-				print(i)
 if __name__ == "__main__":
         main()
