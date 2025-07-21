@@ -1,6 +1,6 @@
 \version "2.22.1"
 
-\relative c'{
+\relative c' {
   \clef bass
   \key e \major
   \time 4/4
