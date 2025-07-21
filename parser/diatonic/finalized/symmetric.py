@@ -2,14 +2,33 @@ import ly.lex
 from ly.pitch import PitchIterator
 from ly.pitch import Pitch
 
+def extract_key_pitch(tokens):
+	tokens = list(tokens)
+	it = iter(tokens)
+	for token in it:
+		if str(token) == '\\key':
+			while True:
+				try:
+					next_token = next(it)
+					if next_token and str(next_token).strip():
+						return next_token
+				except StopIteration:
+					return None
+	return None
+
 def main():
 	with open("twinkle.ly", "r") as file:
 		content = file.read()
 
 	s = ly.lex.state("lilypond")
+	tokens = list(s.tokens(content))
 	all_pitches = PitchIterator(s.tokens(content), language='nederlands')
 	
 	axis = Pitch(1, 0, 1)
+	key_pitch = extract_key_pitch(tokens)
+	if key_pitch:
+		axis = key_pitch
+		print(axis)
 
 	with open("output.ly", "w") as file:
 		depth = 0
