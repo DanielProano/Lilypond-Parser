@@ -3,32 +3,30 @@ from ly.pitch import PitchIterator
 from ly.pitch import Pitch
 
 def extract_key_pitch(tokens):
-	tokens = list(tokens)
-	it = iter(tokens)
-	for token in it:
+	for token in tokens.pitches():
 		if str(token) == '\\key':
-			while True:
 				try:
-					next_token = next(it)
-					if next_token and str(next_token).strip():
-						return next_token
+					while True:
+						next_token = next(tokens.pitches())
+						if next_token and str(next_token).strip():
+							return next_token
 				except StopIteration:
 					return None
 	return None
 
 def main():
-	with open("twinkle.ly", "r") as file:
+	with open("d_scale.ly", "r") as file:
 		content = file.read()
 
 	s = ly.lex.state("lilypond")
-	tokens = list(s.tokens(content))
 	all_pitches = PitchIterator(s.tokens(content), language='nederlands')
+	list_of_pitches = PitchIterator(s.tokens(content), language='nederlands')
 	
 	axis = Pitch(1, 0, 1)
-	key_pitch = extract_key_pitch(tokens)
+	key_pitch = extract_key_pitch(list_of_pitches)
 	if key_pitch:
+		print(key_pitch)
 		axis = key_pitch
-		print(axis)
 
 	with open("output.ly", "w") as file:
 		depth = 0
@@ -70,6 +68,6 @@ def main():
 				out = Pitch(inverted_note, inverted_alter, inverted_octave)
 				file.write(out.output('nederlands') + ' ')
 			else:
-				file.write(i.output('nederlands'))
+				file.write(i.output('nederlands') + ' ')
 if __name__ == "__main__":
         main()
