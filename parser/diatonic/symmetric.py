@@ -1,11 +1,6 @@
-from ly.document import Document, Cursor
 import ly.lex
 from ly.pitch import PitchIterator
-from ly.pitch.transpose import Transposer, Simplifier
 from ly.pitch import Pitch
-from fractions import Fraction
-import math
-
 
 def main():
 	with open("twinkle.ly", "r") as file:
@@ -39,7 +34,7 @@ def main():
 				
 				file.write(f"{token_str}")
 				continue
-
+	
 
 			if depth > 0:
 				inverted_note = 2 * 1 - i.note % 7
