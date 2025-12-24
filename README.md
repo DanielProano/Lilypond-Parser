@@ -1,4 +1,5 @@
-![Kundalini_Software_Internship_Code](https://github.com/user-attachments/assets/ef47fe92-cd52-4f23-a821-05430412deca)
+![Kundalini_Software_Internship_Code](<img width="2600" height="204" alt="image" src="https://github.com/user-attachments/assets/f495e052-d9e0-4003-a076-c21eb7c9cd30" />
+)
 
 # Overview
 This is the open source code I made for my internship with Kundalini Software. 
